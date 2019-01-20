@@ -34,14 +34,14 @@ currency_convert <- function(amount, prefix = "£", stop_pennies = 4) {
          amount2 <-  amount2 / (1000 ^ units)
          currency <-  paste0(prefix,amount2," ",end) } }
   
-  #deal with small numbers
+  #if 0 pounds then put units into pennies
   else { if (round(amount) == 0) {
             amount2 <- round(amount, digits = 2) * 100
             if(prefix == "$") {pennies = "c"} else {pennies = "p"}
             currency = paste0(amount2,pennies)
                                   }
          
-         #if 0 pounds then put units into pennies
+         #deal with small numbers 
          else {amount <- round(amount, digits = 2)
                amount2 <- sprintf("%.2f",round(amount,2))
                currency <- paste0(prefix,amount2) }
