@@ -1,4 +1,4 @@
-# Currency_Converter
+# Format_Currency
 
 A function to duplicate functionality of the R function dollar_format from the package scales.
 
